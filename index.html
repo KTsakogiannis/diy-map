@@ -7,10 +7,10 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<header><h1>DIY Path Map</h1><p>Enter the azimuth and distance for each leg to plot your path.</p></header>
+	<header><h1>DIY Path Map</h1><p>Choose peper size. Enter the azimuth and distance for each leg to plot your path.</p></header>
 	<main>
 		<section class="panel">
-			<h2>Path legs</h2><p class="hint">Leg 1 runs from point A to B. Enter azimuth clockwise from north (0°–360°) and distance in metres. Each new leg starts where the previous leg ends.</p>
+			
 			<div class="paper-settings">
 				<label>Paper size<select id="paperSize"><option value="A5">A5</option><option value="A4" selected>A4</option><option value="A3">A3</option></select></label>
 				<div class="paper-scale"><span>Print scale</span><strong id="ratio">1:1000</strong><small id="orientation">Portrait</small></div>
@@ -21,6 +21,7 @@
 				<label>Date<input id="mapDate" type="date"></label>
 				<label>Place<input id="mapPlace" type="text" placeholder="Survey location"></label>
 			</div>
+			<h2>Path legs</h2><p class="hint">Leg 1 runs from point A to B. Enter azimuth clockwise from north (0°–360°) and distance in metres. Each new leg starts where the previous leg ends.</p>
 			<div class="leg-list" id="points"></div>
 			<div class="actions"><button class="secondary" id="add">+ Add leg</button><button class="primary" id="clear">Reset</button></div>
 		</section>
