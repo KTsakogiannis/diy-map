@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>DIY Path Map</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header><h1>DIY Path Map</h1><p>Enter the azimuth and distance for each leg to plot your path.</p></header>
+	<main>
+		<section class="panel">
+			<h2>Path legs</h2><p class="hint">Leg 1 runs from point A to B. Enter azimuth clockwise from north (0°–360°) and distance in metres. Each new leg starts where the previous leg ends.</p>
+			<div class="paper-settings">
+				<label>Paper size<select id="paperSize"><option value="A5">A5</option><option value="A4" selected>A4</option><option value="A3">A3</option></select></label>
+				<div class="paper-scale"><span>Print scale</span><strong id="ratio">1:1000</strong><small id="orientation">Portrait</small></div>
+				<button class="primary export" id="export">Export PDF</button>
+			</div>
+			<div class="map-details">
+				<label>Name<input id="mapName" type="text" placeholder="Your name"></label>
+				<label>Date<input id="mapDate" type="date"></label>
+				<label>Place<input id="mapPlace" type="text" placeholder="Survey location"></label>
+			</div>
+			<div class="leg-list" id="points"></div>
+			<div class="actions"><button class="secondary" id="add">+ Add leg</button><button class="primary" id="clear">Reset</button></div>
+		</section>
+		<section class="map-card">
+			<div class="stats"><div class="stat"><strong id="total">0.00 m</strong><span>Total distance</span></div><div class="stat"><strong id="legs">0</strong><span>Path legs</span></div><div class="stat"><strong id="summaryRatio">1:1000</strong><span>Paper scale</span></div></div>
+			<canvas id="map" aria-label="Path map"></canvas><div class="legend"><span>North ↑ &nbsp; • &nbsp; Scale fits selected paper</span></div>
+			<table><thead><tr><th>Leg</th><th>From → To</th><th>Azimuth</th><th>Distance</th></tr></thead><tbody id="results"><tr><td colspan="4">Add at least two points.</td></tr></tbody></table>
+		</section>
+	</main>
+	<script src="script.js" defer></script>
+</body>
+</html>
